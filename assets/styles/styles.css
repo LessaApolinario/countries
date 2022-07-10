@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --bg: #323232;
+  --text: #DDDDDD;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--text);
+}
+
+body header.title {
+  padding: 1rem;
+  margin: 5rem 0;
+}
+
+.title h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  font-style: normal;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+ul[data-js="countries"] {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3rem;
+
+  padding: 0 2rem;
+
+  list-style: none;
+}
+
+ul[data-js="countries"] li {
+  background: var(--bg);
+  color: var(--text);
+
+  min-width: 300px;
+  width: clamp(300px, 350px, 500px);
+  height: 600px;
+
+  padding: 0.8rem;
+
+  border-radius: 6px;
+
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+li:hover {
+  animation: jump 3s;
+}
+
+li header,
+li header h1 {
+  margin-bottom: 1rem;
+}
+
+li header h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  font-style: normal;
+  
+  text-align: center;
+}
+
+li header div {
+  text-align: center;
+}
+
+li header  div img {
+  width: 100%;
+  height: 100%;
+
+  max-height: 200px;
+  object-fit: fill;
+}
+
+li article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li article *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+li article h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  font-style: normal;
+}
+
+li article p {
+  font-size: 1.05rem;
+}
+li header h1,
+li article h2,
+li article p {
+  opacity: 0.7;
+}
+
+li header h1:hover,
+li article h2:hover,
+li article p:hover {
+  opacity: 1;
+}
+
+@keyframes jump {
+  from {
+    transform: translate(-1.25rem, -1.25rem);
+  }
+  
+  to {
+    transform: translate(0, 0);
+  }
+}
