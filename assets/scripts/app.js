@@ -31,7 +31,6 @@ const insertCountriesIntoDOM = async () => {
   const ul = document.querySelector('ul[data-js="countries"]')
   
   const countries = await resolveAllCountriesPromises()
-  console.log(countries)
   countries.map(item => {
     const { capital, cca2, currencies, flags, name, region, population } = item
     let coin = ''
